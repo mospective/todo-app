@@ -1,0 +1,96 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, div, section, main {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+.input-area {
+    background-color: #1976d2;
+    height: 80px;
+    padding: 10px 10px;
+    position: relative;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    /* box-sizing: border-box; */
+}
+.input-area input {
+    background-color: #4991ca;
+    border: 0;
+    height: inherit;
+    width: 100%;
+    border-radius: 35px;
+    padding: 10px 20px 10px 100px;
+    box-sizing: border-box;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+.input-area img {
+    position: absolute;
+    top: 10px;
+    left: 9px;
+    width: 80px;
+    max-width: 100%;
+}
+
+.space .listItems {
+    margin: 15px;
+    list-style: none;
+    border-radius: 5px;
+    
+}
+
+.space .listItems li {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.space .listItems li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.space .listItems li .config button {
+    border: 0;
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+.space .listItems li .config button.toggled-not {
+    background-image: url(../img/incomplete.png);
+    background-size: 45px;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.space .listItems li .config button.toggled-not:hover {
+    background-image: url(../img/complete.png);
+}
+
+.space .listItems li .config button.delete {
+    background-image: url(../img/delete2.png);
+    background-size: 45px;
+}
+
+.space .listItems li .config button.toggled {
+    background-image: url(../img/complete.png);
+    background-size: 45px;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.space .listItems li .config button.toggled:hover {
+    background-image: url(../img/incomplete.png)
+}
+
