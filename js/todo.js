@@ -77,10 +77,16 @@ var handlers = {
         todoList.deleteTodo(position);
         view.displayTodos();
     },
-    toggleCompleted: function() {
-        var getNum = document.getElementById('toggleCompletedNum');
-        todoList.toggleCompleted(getNum.valueAsNumber);
-        getNum.value = '';
+    toggleCompleted: function(position) {
+        // var target = document.querySelector('ul.listItems');
+        // target.addEventListener('click', function(e){
+        //    // console.log(e.target.parentNode.parentNode.id);
+        //     var event = e.target.parentNode.parentNode.id;
+        //     todoList.toggleCompleted(event);
+        //     console.log(event);
+        // });
+        
+        todoList.toggleCompleted(position);
         view.displayTodos();
     },
     toggleAll: function() {
@@ -124,7 +130,8 @@ var view = {
                     toggleBtn.className = 'toggled-not';
                     //todoCompleted = '( ) ' + todoText;
                 }
-
+        
+           todoLi.id = i;
            todoLi.appendChild(todoItem);
            todoConfig.appendChild(toggleBtn);
            todoLi.appendChild(todoConfig);
@@ -166,10 +173,19 @@ var view = {
                     handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
                 }
             }, false);
+    },
+    setupEventToggle: function() {
+        var target = document.querySelector('ul.listItems');
+        target.addEventListener('click', function(e){
+            handlers.toggleCompleted(e.target.parentNode.parentNode.id);
+            console.log(event);
+        });
     }
 
 };
 
 view.setupEventListener();
+view.setupEventToggle();
 handlers.addTodo();
+handlers.toggleCompleted();
 
